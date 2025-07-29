@@ -60,7 +60,6 @@ class _CameraScreenState extends State<CameraScreen>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _initializeCamera();
-    _getCurrentLocation();
     _startDateTimeUpdates();
     _testFFmpeg();
   }
@@ -80,7 +79,7 @@ class _CameraScreenState extends State<CameraScreen>
       return;
     }
     if (state == AppLifecycleState.inactive) {
-      cameraController.dispose();
+      // cameraController.dispose();
     } else if (state == AppLifecycleState.resumed) {
       _initializeCamera();
     }
@@ -97,6 +96,9 @@ class _CameraScreenState extends State<CameraScreen>
       try {
         await _controller!.initialize();
         if (mounted) setState(() {});
+
+        // Request location after camera permission is done
+        _getCurrentLocation();
       } catch (e) {
         print('Error initializing camera: $e');
         if (mounted) {
