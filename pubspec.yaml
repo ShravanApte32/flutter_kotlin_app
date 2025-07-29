@@ -1,0 +1,42 @@
+name: camera_app
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Cupertino icons for iOS style icons
+  cupertino_icons: ^1.0.8
+
+  # Camera & location
+  camera: ^0.10.5+5
+  geolocator: ^10.1.0
+
+  # Video processing
+  ffmpeg_kit_flutter_new: ^3.0.1
+
+  # Utilities
+  path_provider: ^2.1.5
+  rename_app: ^1.6.5
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  # Add your image/video assets here if needed
+  # assets:
+  assets:
+    - assets/
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/camera.png"
+  adaptive_icon_background: "#FFFFFF" # White background
+  adaptive_icon_foreground: "assets/camera.png"
